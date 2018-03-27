@@ -3,6 +3,7 @@
         "email": "rreinold@clearblade.com"
     },
     "clouds": [],
+    "asset_types":["Code Libraries"],
     "description": "Library for realtime and historical data on digital/crypto currencies",
     "domains": [],
     "gateways": [],

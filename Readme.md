@@ -11,23 +11,70 @@ This is an ipm package, which contains one or more reusable assets within the ip
 
 ## Setup
 
-_Add any setup instructions, such as an API Key_
+Get a free API Key Here:  
+
+[https://www.alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key)
 
 ## Usage
 
-_Describe assets_
+### Code Libraries
+
+`CryptoMarket` - Library for fetching crypto pricing
 
 ### Code Services
 
-### Code Libraries
-
-### Portals
-
-### Collections
+`ExampleCryptoDaily` - Fetches daily prices for BTC
+`ExampleCryptoIntraday` - Fetches intraday prices for BTC
 
 ## API
 
-_Document your API here_
+<a name="CryptoMarket"></a>
+
+### CryptoMarket
+Fetch market prices for cryptocurrencies. Built upon Alpha Vantage's free API
+
+**Kind**: global typedef  
+**Link**: https://www.alphavantage.co/documentation/  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| apiKey | <code>string</code> | API Key provided by Alpha Vantage |
+| market | <code>string</code> | cryptocurrency market, ex "USD" (see docs link above for all options) |
+
+
+* [CryptoMarket](#CryptoMarket)
+    * [~intraday(symbol, callback)](#CryptoMarket..intraday)
+    * [~daily(symbol, callback)](#CryptoMarket..daily)
+
+<a name="CryptoMarket..intraday"></a>
+
+### CryptoMarket~intraday(symbol, callback)
+Fetches intraday data for a cryptocurrency
+
+memberof CryptoMarket
+
+**Kind**: inner method of [<code>CryptoMarket</code>](#CryptoMarket)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
+| callback | <code>callback</code> | response function(err, data) |
+
+<a name="CryptoMarket..daily"></a>
+
+### CryptoMarket~daily(symbol, callback)
+Fetches daily data for a cryptocurrency
+
+memberof CryptoMarket
+
+**Kind**: inner method of [<code>CryptoMarket</code>](#CryptoMarket)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
+| callback | <code>callback</code> | response function(err, data) |
+
+
 
 ## Thank you
 
