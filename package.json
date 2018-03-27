@@ -1,0 +1,34 @@
+{
+    "author": {
+        "email": "rreinold@clearblade.com"
+    },
+    "clouds": [],
+    "description": "Library for realtime and historical data on digital/crypto currencies",
+    "domains": [],
+    "gateways": [],
+    "image_url": "https://bitcoin.org/img/icons/opengraph.png",
+    "keywords": [
+        "clearblade",
+        "iot",
+        "platform",
+        "blockchain",
+        "crypto",
+        "cryptography",
+        "market",
+        "bitcoin",
+        "litecoin",
+        "altcoin",
+        "trading",
+        "trade",
+        "price",
+        "pricing",
+        "stock"
+    ],
+    "license": "MIT",
+    "name": "crypto-market",
+    "private": false,
+    "prog_lang": [],
+    "protocols": [],
+    "things": [],
+    "version": "1.0"
+}
