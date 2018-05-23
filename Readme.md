@@ -90,6 +90,15 @@ Fetches intraday data for a cryptocurrency
 | symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
 | callback | [<code>callback</code>](#callback) | response function(err, data) |
 
+**Example**  
+
+```js
+var market = CryptoMarket(API_KEY);
+market.intraday("BTC", function(err, data){
+    resp.success(data)
+});
+```
+
 <a name="CryptoMarket.daily"></a>
 
 #### CryptoMarket.daily(symbol, callback)

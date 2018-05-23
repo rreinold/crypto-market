@@ -22,6 +22,14 @@ function CryptoMarket(apiKey, market){
      * @memberof CryptoMarket
      * @param {string} symbol cryptocurrency symbol, ex "BTC" (see docs link above for all options)
      * @param {callback} callback response function(err, data)
+     * 
+     * @example
+     * 
+     * var market = CryptoMarket(API_KEY);
+     * market.intraday("BTC", function(err, data){
+     *     resp.success(data)
+     * });
+     * 
      */
     function intraday(symbol, callback){
         var options = DEFAULT_OPTIONS
