@@ -21,7 +21,7 @@ Can be used to monitor crypto-currencies prices on ClearBlade platform. Can be i
 ## Assets
 ### Code Libraries
 
-`CryptoMarket` - Library for fetching crypto pricing
+`CryptoMarketLib` - Library for fetching crypto pricing. It can be accessed using _CryptoMarket_ object.  
 
 ### Code Services
 
