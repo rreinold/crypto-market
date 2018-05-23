@@ -2,9 +2,9 @@
     "current_version": 7,
     "dependencies": "CryptoMarket",
     "logging_enabled": "true",
-    "name": "ExampleCryptoIntraday",
+    "name": "CryptoExampleIntraday",
     "params": [],
     "permissions": {},
     "run_user": "",
-    "source": "ExampleCryptoIntraday.js"
+    "source": "CryptoExampleIntraday.js"
 }

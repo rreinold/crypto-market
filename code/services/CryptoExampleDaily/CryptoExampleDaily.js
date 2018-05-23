@@ -32,7 +32,7 @@
  *     }
  */
 
-function ExampleCryptoDaily(req, resp){
+function CryptoExampleDaily(req, resp){
     var API_KEY = "90ISJH02B3K3H98J"
     var market = CryptoMarket(API_KEY);
     market.daily("BTC", function(err, data){

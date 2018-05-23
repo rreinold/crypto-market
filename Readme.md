@@ -16,21 +16,48 @@ Get a free API Key Here:
 [https://www.alphavantage.co/support/#api-key](https://www.alphavantage.co/support/#api-key)
 
 ## Usage
+Can be used to monitor crypto-currencies prices on ClearBlade platform. Can be integrated with an existing system to do exciting projects.
 
+## Assets
 ### Code Libraries
 
 `CryptoMarket` - Library for fetching crypto pricing
 
 ### Code Services
 
-`ExampleCryptoDaily` - Fetches daily prices for BTC
-`ExampleCryptoIntraday` - Fetches intraday prices for BTC
+#### Example 
+
+* `CryptoExampleDaily` - Fetches daily prices for BTC
+* `CryptoExampleIntraday` - Fetches intraday prices for BTC
 
 ## API
 
+### Typedefs
+
+<dl>
+<dt><a href="#callback">callback</a> : <code>function</code></dt>
+<dd><p>This callback is displayed as part of sgEmail.</p>
+</dd>
+<dt><a href="#CryptoMarket">CryptoMarket</a> : <code>Object</code></dt>
+<dd><p>Fetch market prices for cryptocurrencies. Built upon Alpha Vantage&#39;s free API</p>
+</dd>
+</dl>
+
+<a name="callback"></a>
+
+### callback : <code>function</code>
+This callback is displayed as part of sgEmail.
+
+**Kind**: global typedef  
+
+| Param | Type |
+| --- | --- |
+| err | <code>Object</code> | 
+| resp | <code>Object</code> | 
+
 <a name="CryptoMarket"></a>
 
-### CryptoMarket
+### CryptoMarket : <code>Object</code>
 Fetch market prices for cryptocurrencies. Built upon Alpha Vantage's free API
 
 **Kind**: global typedef  
@@ -41,41 +68,45 @@ Fetch market prices for cryptocurrencies. Built upon Alpha Vantage's free API
 | apiKey | <code>string</code> | API Key provided by Alpha Vantage |
 | market | <code>string</code> | cryptocurrency market, ex "USD" (see docs link above for all options) |
 
+**Example**  
 
-* [CryptoMarket](#CryptoMarket)
-    * [~intraday(symbol, callback)](#CryptoMarket..intraday)
-    * [~daily(symbol, callback)](#CryptoMarket..daily)
+```js
+var market = CryptoMarket(API_KEY);
+```
 
-<a name="CryptoMarket..intraday"></a>
+* [CryptoMarket](#CryptoMarket) : <code>Object</code>
+    * [.intraday(symbol, callback)](#CryptoMarket.intraday)
+    * [.daily(symbol, callback)](#CryptoMarket.daily)
 
-### CryptoMarket~intraday(symbol, callback)
+<a name="CryptoMarket.intraday"></a>
+
+#### CryptoMarket.intraday(symbol, callback)
 Fetches intraday data for a cryptocurrency
 
-memberof CryptoMarket
-
-**Kind**: inner method of [<code>CryptoMarket</code>](#CryptoMarket)  
+**Kind**: static method of [<code>CryptoMarket</code>](#CryptoMarket)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
-| callback | <code>callback</code> | response function(err, data) |
+| callback | [<code>callback</code>](#callback) | response function(err, data) |
 
-<a name="CryptoMarket..daily"></a>
+<a name="CryptoMarket.daily"></a>
 
-### CryptoMarket~daily(symbol, callback)
+#### CryptoMarket.daily(symbol, callback)
 Fetches daily data for a cryptocurrency
 
-memberof CryptoMarket
-
-**Kind**: inner method of [<code>CryptoMarket</code>](#CryptoMarket)  
+**Kind**: static method of [<code>CryptoMarket</code>](#CryptoMarket)  
 
 | Param | Type | Description |
 | --- | --- | --- |
 | symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
-| callback | <code>callback</code> | response function(err, data) |
+| callback | [<code>callback</code>](#callback) | response function(err, data) |
 
+**Example**  
 
-
-## Thank you
-
-Powered by ClearBlade Enterprise IoT Platform: [https://platform.clearblade.com](https://platform.clearblade.com)
+```js
+var market = CryptoMarket(API_KEY);
+market.daily("BTC", function(err, data){
+    resp.success(data)
+});
+```
