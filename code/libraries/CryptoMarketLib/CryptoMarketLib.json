@@ -3,6 +3,6 @@
     "dependencies": "http,log",
     "description": "Realtime and historical data on stocks, physical currencies, and digital/crypto currencies",
     "name": "CryptoMarketLib",
-    "version": null,
+    "version": 2,
     "visibility": "system"
 }

@@ -1,5 +1,5 @@
 {
-    "current_version": 4,
+    "current_version": 10,
     "dependencies": "CryptoMarketLib",
     "logging_enabled": "false",
     "name": "CryptoExampleDaily",

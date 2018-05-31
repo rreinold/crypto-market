@@ -32,10 +32,17 @@
  *     }
  */
 
-function CryptoExampleDaily(req, resp){
+function CryptoExampleDaily(req, resp) {
     var API_KEY = "90ISJH02B3K3H98J"
     var market = CryptoMarket(API_KEY);
-    market.daily("BTC", function(err, data){
-        resp.success(data)
-    })
+    var callback = function (err, data) {
+        if (err) {
+            resp.error(data);
+        }
+        else {
+            resp.success(data);
+        }
+    }
+    var market = CryptoMarket(API_KEY);
+    market.daily(callback, "BTC");
 }

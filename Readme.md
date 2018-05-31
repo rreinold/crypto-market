@@ -31,12 +31,11 @@ Can be used to monitor crypto-currencies prices on ClearBlade platform. Can be i
 * `CryptoExampleIntraday` - Fetches intraday prices for BTC
 
 ## API
-
 ### Typedefs
 
 <dl>
 <dt><a href="#callback">callback</a> : <code>function</code></dt>
-<dd><p>This callback is displayed as part of sgEmail.</p>
+<dd><p>This callback is displayed as part of this Library.</p>
 </dd>
 <dt><a href="#CryptoMarket">CryptoMarket</a> : <code>Object</code></dt>
 <dd><p>Fetch market prices for cryptocurrencies. Built upon Alpha Vantage&#39;s free API</p>
@@ -46,7 +45,7 @@ Can be used to monitor crypto-currencies prices on ClearBlade platform. Can be i
 <a name="callback"></a>
 
 ### callback : <code>function</code>
-This callback is displayed as part of sgEmail.
+This callback is displayed as part of this Library.
 
 **Kind**: global typedef  
 
@@ -63,10 +62,10 @@ Fetch market prices for cryptocurrencies. Built upon Alpha Vantage's free API
 **Kind**: global typedef  
 **Link**: https://www.alphavantage.co/documentation/  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| apiKey | <code>string</code> | API Key provided by Alpha Vantage |
-| market | <code>string</code> | cryptocurrency market, ex "USD" (see docs link above for all options) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| apiKey | <code>string</code> |  | API Key provided by Alpha Vantage |
+| [market] | <code>string</code> | <code>&quot;USD&quot;</code> | cryptocurrency market, defaults to "USD" (see docs link above for all options) |
 
 **Example**  
 
@@ -75,41 +74,47 @@ var market = CryptoMarket(API_KEY);
 ```
 
 * [CryptoMarket](#CryptoMarket) : <code>Object</code>
-    * [.intraday(symbol, callback)](#CryptoMarket.intraday)
-    * [.daily(symbol, callback)](#CryptoMarket.daily)
+    * [.intraday(callback, [symbol])](#CryptoMarket.intraday)
+    * [.daily(callback, [symbol])](#CryptoMarket.daily)
 
 <a name="CryptoMarket.intraday"></a>
 
-#### CryptoMarket.intraday(symbol, callback)
+#### CryptoMarket.intraday(callback, [symbol])
 Fetches intraday data for a cryptocurrency
 
 **Kind**: static method of [<code>CryptoMarket</code>](#CryptoMarket)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
-| callback | [<code>callback</code>](#callback) | response function(err, data) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| callback | [<code>callback</code>](#callback) |  | response function(err, data) |
+| [symbol] | <code>string</code> | <code>&quot;BTC&quot;</code> | cryptocurrency symbol, defaults to "BTC" (see docs link above for all options) |
 
 **Example**  
 
 ```js
-var market = CryptoMarket(API_KEY);
-market.intraday("BTC", function(err, data){
-    resp.success(data)
-});
-```
+var callback  = function(err, data){
+     if(err){
+         resp.error(data);
+     }
+     else{
+         resp.success(data);
+     }
+}
 
+var market = CryptoMarket(API_KEY);
+market.intraday(callback, "BTC");
+```
 <a name="CryptoMarket.daily"></a>
 
-#### CryptoMarket.daily(symbol, callback)
+#### CryptoMarket.daily(callback, [symbol])
 Fetches daily data for a cryptocurrency
 
 **Kind**: static method of [<code>CryptoMarket</code>](#CryptoMarket)  
 
-| Param | Type | Description |
-| --- | --- | --- |
-| symbol | <code>string</code> | cryptocurrency symbol, ex "BTC" (see docs link above for all options) |
-| callback | [<code>callback</code>](#callback) | response function(err, data) |
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| callback | [<code>callback</code>](#callback) |  | response function(err, data) |
+| [symbol] | <code>string</code> | <code>&quot;BTC&quot;</code> | cryptocurrency symbol, defaults to "BTC" (see docs link above for all options) |
 
 **Example**  
 

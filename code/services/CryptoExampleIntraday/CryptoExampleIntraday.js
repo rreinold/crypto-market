@@ -35,7 +35,14 @@
 function CryptoExampleIntraday(req, resp){
     var API_KEY = "90ISJH02B3K3H98J"
     var market = CryptoMarket(API_KEY);
-    market.intraday("BTC", function(err, data){
-        resp.success(data)
-    })
+    var callback = function (err, data) {
+        if (err) {
+            resp.error(data);
+        }
+        else {
+            resp.success(data);
+        }
+    }
+    var market = CryptoMarket(API_KEY);
+    market.intraday(callback, "BTC");
 }

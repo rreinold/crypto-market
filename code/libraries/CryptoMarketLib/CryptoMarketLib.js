@@ -3,7 +3,7 @@
  * @link https://www.alphavantage.co/documentation/
  * @typedef {Object} CryptoMarket
  * @param {string} apiKey API Key provided by Alpha Vantage 
- * @param {string} market cryptocurrency market, ex "USD" (see docs link above for all options)
+ * @param {string} [market=USD] cryptocurrency market, defaults to "USD" (see docs link above for all options)
  * 
  * @example
  * var market = CryptoMarket(API_KEY);
@@ -20,18 +20,25 @@ function CryptoMarket(apiKey, market){
      * Fetches intraday data for a cryptocurrency
      * 
      * @memberof CryptoMarket
-     * @param {string} symbol cryptocurrency symbol, ex "BTC" (see docs link above for all options)
      * @param {callback} callback response function(err, data)
+     * @param {string} [symbol=BTC] cryptocurrency symbol, defaults to "BTC" (see docs link above for all options)
      * 
      * @example
      * 
+     * var callback  = function(err, data){
+     *      if(err){
+     *          resp.error(data);
+     *      }
+     *      else{
+     *          resp.success(data);
+     *      }
+     * }
+     * 
      * var market = CryptoMarket(API_KEY);
-     * market.intraday("BTC", function(err, data){
-     *     resp.success(data)
-     * });
+     * market.intraday(callback, "BTC");
      * 
      */
-    function intraday(symbol, callback){
+    function intraday(callback, symbol){
         var options = DEFAULT_OPTIONS
         options.apiKey = apiKey
         options.function = "DIGITAL_CURRENCY_INTRADAY"
@@ -44,8 +51,8 @@ function CryptoMarket(apiKey, market){
      * Fetches daily data for a cryptocurrency
      * 
      * @memberof CryptoMarket
-     * @param {string} symbol cryptocurrency symbol, ex "BTC" (see docs link above for all options)
      * @param {callback} callback response function(err, data)
+     * @param {string} [symbol=BTC] cryptocurrency symbol, defaults to "BTC" (see docs link above for all options)
      * 
      * @example
      * var market = CryptoMarket(API_KEY);
@@ -53,7 +60,7 @@ function CryptoMarket(apiKey, market){
      *     resp.success(data)
      * });
      */
-    function daily(symbol, callback){
+    function daily(callback, symbol){
         var options = DEFAULT_OPTIONS
         options.apiKey = apiKey
         options.function = "DIGITAL_CURRENCY_DAILY"
@@ -71,7 +78,6 @@ function CryptoMarket(apiKey, market){
         var requestOptions = {
             url
         }
-        //log(url); //Uncomment to see the generated URL in logs
         r.get(requestOptions, callback)
     }
     
@@ -83,7 +89,7 @@ function CryptoMarket(apiKey, market){
 }
 
 /**
-* This callback is displayed as part of sgEmail.
+* This callback is displayed as part of this Library.
 * @callback callback
 * @param {Object} err
 * @param {Object} resp
