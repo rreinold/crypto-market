@@ -3,8 +3,8 @@
     "deployments": [],
     "description": "LIbrary for fetching market pricing data for Cryptocurrencies",
     "messaging_url": "staging.clearblade.com:1883",
-    "name": "pdcryptocurrencyapi",
+    "name": "crypto-market",
     "platform_url": "https://staging.clearblade.com",
-    "system_key": "aeb7d5ab0bceccc18eefd3ecc819",
-    "system_secret": "AEB7D5AB0BCC94898680B8C1C850"
+    "system_key": "",
+    "system_secret": ""
 }

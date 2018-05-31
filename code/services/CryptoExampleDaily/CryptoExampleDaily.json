@@ -1,0 +1,10 @@
+{
+    "current_version": 10,
+    "dependencies": "CryptoMarketLib",
+    "logging_enabled": "false",
+    "name": "CryptoExampleDaily",
+    "params": [],
+    "permissions": {},
+    "run_user": "",
+    "source": "CryptoExampleDaily.js"
+}

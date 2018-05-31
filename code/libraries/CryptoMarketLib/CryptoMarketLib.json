@@ -2,7 +2,7 @@
     "api": "",
     "dependencies": "http,log",
     "description": "Realtime and historical data on stocks, physical currencies, and digital/crypto currencies",
-    "name": "CryptoMarket",
-    "version": 11,
+    "name": "CryptoMarketLib",
+    "version": 2,
     "visibility": "system"
 }

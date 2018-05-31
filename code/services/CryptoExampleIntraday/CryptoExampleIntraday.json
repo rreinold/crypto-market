@@ -1,0 +1,10 @@
+{
+    "current_version": 3,
+    "dependencies": "CryptoMarketLib",
+    "logging_enabled": "true",
+    "name": "CryptoExampleIntraday",
+    "params": [],
+    "permissions": {},
+    "run_user": "",
+    "source": "CryptoExampleIntraday.js"
+}
